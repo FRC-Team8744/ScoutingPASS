@@ -57,13 +57,14 @@ var config_data = `
     },
     { "name": "Auto Starting Position",
       "code": "asp",
-      "type": "robot",
+      "type": "radio",
       "choices": {
         "r1": "Left",
         "r2": "Middle",
-        "r3": "Right"
+        "r3": "Right",
+        "x": "Didn't see"
       },
-      "required":"true"
+      "defaultValue": "x"
     }
   ],
   "auton": [
