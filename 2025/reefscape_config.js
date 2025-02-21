@@ -63,6 +63,7 @@ var config_data = `
         "r2": "Middle",
         "r3": "Right",
       },
+      "required":"true"
     }
   ],
   "auton": [
