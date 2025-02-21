@@ -56,12 +56,12 @@ var config_data = `
       "max": 99999
     },
     { "name": "Auto Starting Position",
-      "code": "r",
+      "code": "asp",
       "type": "robot",
       "choices": {
         "r1": "Left",
         "r2": "Middle",
-        "r3": "Right",
+        "r3": "Right"
       },
       "required":"true"
     }
