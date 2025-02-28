@@ -169,13 +169,15 @@ var config_data = `
       "code": "dr",
       "type": "radio",
       "choices": {
-        "1": "Below Average<br>",
-        "2": "Average<br>",
-        "3": "Good<br>",
-        "4": "Excellent<br>",
-        "5": "Did not play defense"
+        "AB": "5<br>",
+        "E": "4<br>",
+        "G": "3<br>",
+        "A": "2<br>",
+        "BA": "1<br>",
+        "DNP": "0"
       },
-      "defaultValue": "5"
+      "defaultValue": "DNP"
+      // BA is below average, A is average, G is good, E is excellent, DNP is did not play, AB is above and beyond
     },
     { "name": "Speed Rating",
       "code": "sr",
