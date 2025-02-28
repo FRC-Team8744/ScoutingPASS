@@ -72,6 +72,10 @@ var config_data = `
       "code": "al",
       "type": "bool"
     },
+    { "name": "Dropped Coral (>2)",
+      "code": "dc",
+      "type": "counter"
+    },
     { "name": "Coral L1",
       "code": "ac1",
       "type": "counter"
@@ -98,6 +102,10 @@ var config_data = `
     }
   ],
   "teleop": [
+    { "name": "Dropped Coral (>2)",
+    "code": "dc",
+    "type": "counter"
+    },
     { "name": "Coral L1",
       "code": "tc1",
       "type": "counter"
@@ -157,78 +165,31 @@ var config_data = `
     }
   ],
   "postmatch": [
-    { "name": "Attained Coopertition Pt",
-      "code": "cop",
-      "type": "bool"
-    },
-    { "name": "Algae Left in Reef",
-      "code": "alr",
-      "type": "number",
-      "min": 0,
-      "max": 9,
-      "defaultValue": 0
-    },
-    { "name": "Driver Skill",
-      "code": "ds",
-      "type": "radio",
-      "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
-      },
-      "defaultValue": "x"
-    },
     { "name": "Defense Rating",
       "code": "dr",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
-        "x": "Did not play defense"
+        "1": "Below Average<br>",
+        "2": "Average<br>",
+        "3": "Good<br>",
+        "4": "Excellent<br>",
+        "5": "Did not play defense"
       },
-      "defaultValue": "x"
+      "defaultValue": "5"
     },
     { "name": "Speed Rating",
       "code": "sr",
       "type": "radio",
       "choices": {
-        "1": "1 (slow)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-        "5": "5 (fast)"
+        "1": "1st<br>",
+        "2": "2nd<br>",
+        "3": "3rd<br>"
       },
       "defaultValue":"3"
     },
     { "name": "Died/Immobilized",
       "code": "die",
       "type": "bool"
-    },
-    { "name": "Tippy<br>(almost tipped over)",
-      "code": "tip",
-      "type": "bool"
-    },
-    { "name": "Dropped Coral (>2)",
-      "code": "dc",
-      "type": "bool"
-    },
-    { "name": "Dropped Algae (>2)",
-      "code": "da",
-      "type": "bool"
-    },
-    { "name": "Make good<br>alliance partner?",
-      "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
-      "type": "bool"
-    },
-    { "name": "Comments",
-      "code": "co",
-      "type": "text",
-      "size": 15,
-      "maxSize": 55
     }
   ]
 }`;
