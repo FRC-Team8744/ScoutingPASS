@@ -177,7 +177,6 @@ var config_data = `
         "DNP": "0"
       },
       "defaultValue": "DNP"
-      // BA is below average, A is average, G is good, E is excellent, DNP is did not play, AB is above and beyond
     },
     { "name": "Speed Rating",
       "code": "sr",
