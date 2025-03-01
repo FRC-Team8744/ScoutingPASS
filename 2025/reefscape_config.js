@@ -1,33 +1,15 @@
 var config_data = `
 {
-  "dataFormat": "tsv",
+  "dataFormat": "csv",
   "title": "Scouting PASS 2025",
   "page_title": "REEFSCAPE",
   "checkboxAs": "10",
   "prematch": [
-    { "name": "Scouter Initials",
-      "code": "s",
-      "type": "scouter",
-      "size": 5,
-      "maxSize": 5,
-      "required": "true"
-    },
-    { "name": "Event",
-      "code": "e",
-      "type": "event",
-      "defaultValue": "2025ilpe",
-      "required": "true"
-    },
-    { "name": "Match Level",
-      "code": "l",
-      "type": "level",
-      "choices": {
-        "qm": "Quals<br>",
-        "sf": "Semifinals<br>",
-        "f": "Finals"
-      },
-      "defaultValue": "qm",
-      "required": "true"
+    { "name": "Team #",
+      "code": "t",
+      "type": "team",
+      "min": 1,
+      "max": 99999
     },
     { "name": "Match #",
       "code": "m",
@@ -36,24 +18,12 @@ var config_data = `
       "max": 150,
       "required": "true"
     },
-    { "name": "Robot",
-      "code": "r",
-      "type": "robot",
-      "choices": {
-        "r1": "Red-1",
-        "b1": "Blue-1<br>",
-        "r2": "Red-2",
-        "b2": "Blue-2<br>",
-        "r3": "Red-3",
-        "b3": "Blue-3"
-      },
-      "required":"true"
-    },
-    { "name": "Team #",
-      "code": "t",
-      "type": "team",
-      "min": 1,
-      "max": 99999
+    { "name": "Scouter Initials",
+      "code": "s",
+      "type": "scouter",
+      "size": 10,
+      "maxSize": 25,
+      "required": "true"
     },
     { "name": "Auto Starting Position",
       "code": "asp",
@@ -73,7 +43,7 @@ var config_data = `
       "type": "bool"
     },
     { "name": "Dropped Coral (>2)",
-      "code": "dc",
+      "code": "adc",
       "type": "counter"
     },
     { "name": "Coral L1",
@@ -92,6 +62,10 @@ var config_data = `
       "code": "ac4",
       "type": "counter"
     },
+    { "name": "De-Algify",
+      "code": "ada",
+      "type": "counter"
+    },
     { "name": "Processor Score",
       "code": "aps",
       "type": "counter"
@@ -107,7 +81,7 @@ var config_data = `
   ],
   "teleop": [
     { "name": "Dropped Coral (>2)",
-    "code": "dc",
+    "code": "tdc",
     "type": "counter"
     },
     { "name": "Coral L1",
@@ -126,6 +100,10 @@ var config_data = `
       "code": "tc4",
       "type": "counter"
     },
+    { "name": "De-Algify",
+      "code": "tda",
+      "type": "counter"
+    },
     { "name": "Processor Score",
       "code": "tps",
       "type": "counter"
@@ -138,27 +116,21 @@ var config_data = `
       "code": "tnm",
       "type": "counter"
     },
-    { "name": "Pickup From",
-      "code": "tpu",
+    { "name": "Defense Rating",
+      "code": "tdr",
       "type": "radio",
       "choices": {
-        "s": "Coral Station<br>",
-        "f": "Floor<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
+        "AB": "5<br>",
+        "E": "4<br>",
+        "G": "3<br>",
+        "A": "2<br>",
+        "BA": "1<br>",
+        "DNP": "0"
       },
-      "defaultValue": "x"
-    },
-    { "name": "Scored in<br>Opponent<br>Processor",
-      "code": "opp",
-      "type": "bool"
+      "defaultValue": "DNP"
     }
   ],
   "endgame": [
-    { "name": "Barge Timer",
-      "code": "ebt",
-      "type": "timer"
-    },
     { "name": "Final Robot Status",
       "code": "efs",
       "type":"radio",
@@ -170,21 +142,30 @@ var config_data = `
         "x": "Not attempted"
       },
       "defaultValue": "x"
+    },
+    { "name": "Barge Timer",
+      "code": "ebt",
+      "type": "timer"
     }
   ],
   "postmatch": [
-    { "name": "Defense Rating",
-      "code": "dr",
+    { "name": "Penalties",
+      "code": "tpen",
+      "type": "counter"
+    },
+    { "name": "Card",
+      "code": "card",
       "type": "radio",
       "choices": {
-        "AB": "5<br>",
-        "E": "4<br>",
-        "G": "3<br>",
-        "A": "2<br>",
-        "BA": "1<br>",
-        "DNP": "0"
+        "Yellow": "Yellow<br>",
+        "Red": "Red<br>",
+        "None": "None<br>"
       },
-      "defaultValue": "DNP"
+      "defaultValue":"None"
+    },
+    { "name": "Disabled",
+      "code": "die",
+      "type": "bool"
     },
     { "name": "Speed Rating",
       "code": "sr",
@@ -195,10 +176,6 @@ var config_data = `
         "3": "3rd<br>"
       },
       "defaultValue":"3"
-    },
-    { "name": "Died/Immobilized",
-      "code": "die",
-      "type": "bool"
     }
   ]
 }`;
