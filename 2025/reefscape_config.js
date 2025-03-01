@@ -150,7 +150,7 @@ var config_data = `
   ],
   "postmatch": [
     { "name": "Penalties",
-      "code": "tpen",
+      "code": "ppen",
       "type": "counter"
     },
     { "name": "Card",
