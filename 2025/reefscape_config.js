@@ -26,7 +26,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Auto Starting Position",
-      "code": "asp",
+      "code": "psp",
       "type": "radio",
       "choices": {
         "r1": "Left",
@@ -42,7 +42,6 @@ var config_data = `
       "defaultValue": "2025ilpe",
       "required": "true"
     }
-
   ],
   "auton": [
     { "name": "Leave Starting Line",
