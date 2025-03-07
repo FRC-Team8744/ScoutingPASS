@@ -35,7 +35,14 @@ var config_data = `
         "x": "Didn't see"
       },
       "defaultValue": "x"
+    },
+    { "name": "Event",
+      "code": "e",
+      "type": "event",
+      "defaultValue": "2025ilpe",
+      "required": "true"
     }
+
   ],
   "auton": [
     { "name": "Leave Starting Line",
